@@ -4,6 +4,9 @@ if (Meteor.isClient) {
   Template.CommentList.helpers({
     comments: function() {
       return Comments.find();
+    },
+    formatTimestamp: function(timestamp) {
+      return moment(timestamp).calendar();
     }
   })
 
